@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <input type="text" [(ngModel)]="city" placeholder="Enter city name" class="form-control" />
+      </div>
+      <div class="col-md-6">
+        <button (click)="getWeather()" class="btn btn-primary">Get Weather</button>
+      </div>
+    </div>
+    <div class="row mt-3" *ngIf="weatherData">
+      <div class="col-md-6">
+        <h3>City: {{ weatherData.cityName }}</h3>
+        <h6>Time: {{ weatherData.current_weather.time }}</h6>
+        <br>
+        <p>Temperature: {{ weatherData.current_weather.temperature }}°C</p>
+        <p>Wind Speed: {{ weatherData.current_weather.windspeed }} km/h</p>
+      </div>
+    </div>
+  </div>
+  
